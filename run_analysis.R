@@ -69,7 +69,7 @@ names(extractdata) <- gsub("-", ": ", names(extractdata))
 # Finally, I export it as a .CSV file, with 180 rows and 69 columns: the same as above, plus the index column.
 tidy <- melt(extractdata, id=c("SubjectID", "ActivityID"))
 tidy <- dcast(tidy, SubjectID + ActivityID ~ variable, mean)
-write.csv(tidy, "tidy.csv")
+write.table(tidy, "tidy.txt", row.names = FALSE)
 
 # To read the data back into R and examine it, using the following commands:
 # data <- read.csv("tidy.csv", header=TRUE)
