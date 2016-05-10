@@ -1,107 +1,92 @@
 describes the variables, the data, and any transformations or work that you performed to clean up the data
 
-There are three types of observations in my data set. The first column, "SubjectID", describes the person about whom the original data was recorded. This number is the same as in the original data set.
-The second column, "ActivityID," describes the activity that the subject was performing when those measurements were taken. The text values in this column were derived from the original data set, and were applied by matching the number in the original data set to the text value describing it.
+There are four types of observations in my data set. The first column is the index of the data set, from 1 to 180, when it was exported from R.
+The second colum, "SubjectID", describes the person about whom the original data was recorded. This number is the same as in the original data set.
+The third column, "ActivityID," describes the activity that the subject was performing when those measurements were taken. The text values in this column were derived from the original data set, and were applied by matching the number in the original data set to the text value describing it.
 The remaining 66 columns each descrbe the average of all of the values for one type of measurement, for that subject and activity. This number was derived by taking all of the original observations, then using melt to turn them from a wide data set into a narrow data set, and finally using dcast to return them to a wide data set, but this time as a summary. The names for those columns follow a standard code, derived from the original data set, that can be interpreted using the below key:
 
-*Time: 
-* Frequency: 
-* Body: 
-* Gravity: 
-* Acceleration: 
-* Gyroscopic: 
-* Jerk: 
-* Magnitude: 
-* mean(): 
-* std(): 
-* X: 
-* Y: 
-* Z: 
+* Time: It is a measurement of time
+* Frequency: A frequency domain measurement resulting from a Fast Fourier Transform on the original time data
+* Body: The portion of the original measurement due to movement of the body
+* Gravity: The portion of the original measurement due to gravity
+* Acceleration: The data was received from the accelerometer, measuring linear acceleration
+* Gyroscopic: The data was received from the gyroscope, measuring angular velocity
+* Jerk: The measurement was divided by the time, to measure "jerking"
+* Magnitude: the magnitude of the 3 dimensional signals, according to the Euclidian norm
+* mean(): The measurement is the mean of all such measurements from the original dataset
+* std(): The measurement is the standard deviation of all such measurements from the original dataset
+* X: The measurement was taken along the phone's X axis
+* Y: The measurement was taken along the phone's Y axis
+* Z: The measurement was taken along the phone's Z axis
 
 The actual column names are as below:
 
-"","SubjectID","ActivityID","Time: Body Acceleration: mean(): X","Time: Body Acceleration: mean(): Y","Time: Body Acceleration: mean(): Z","Time: Body Acceleration: std(): X","Time: Body Acceleration: std(): Y","Time: Body Acceleration: std(): Z","Time: GravityAcceleration: mean(): X","Time: GravityAcceleration: mean(): Y","Time: GravityAcceleration: mean(): Z","Time: GravityAcceleration: std(): X","Time: GravityAcceleration: std(): Y","Time: GravityAcceleration: std(): Z","Time: Body Acceleration Jerk: mean(): X","Time: Body Acceleration Jerk: mean(): Y","Time: Body Acceleration Jerk: mean(): Z","Time: Body Acceleration Jerk: std(): X","Time: Body Acceleration Jerk: std(): Y","Time: Body Acceleration Jerk: std(): Z","Time: Body Gyroscopic: mean(): X","Time: Body Gyroscopic: mean(): Y","Time: Body Gyroscopic: mean(): Z","Time: Body Gyroscopic: std(): X","Time: Body Gyroscopic: std(): Y","Time: Body Gyroscopic: std(): Z","Time: Body Gyroscopic Jerk: mean(): X","Time: Body Gyroscopic Jerk: mean(): Y","Time: Body Gyroscopic Jerk: mean(): Z","Time: Body Gyroscopic Jerk: std(): X","Time: Body Gyroscopic Jerk: std(): Y","Time: Body Gyroscopic Jerk: std(): Z","Time: Body Acceleration Magnitude: mean()","Time: Body Acceleration Magnitude: std()","Time: GravityAcceleration Magnitude: mean()","Time: GravityAcceleration Magnitude: std()","Time: Body Acceleration Jerk Magnitude: mean()","Time: Body Acceleration Jerk Magnitude: std()","Time: Body Gyroscopic Magnitude: mean()","Time: Body Gyroscopic Magnitude: std()","Time: Body Gyroscopic Jerk Magnitude: mean()","Time: Body Gyroscopic Jerk Magnitude: std()","Frequency: Body Acceleration: mean(): X","Frequency: Body Acceleration: mean(): Y","Frequency: Body Acceleration: mean(): Z","Frequency: Body Acceleration: std(): X","Frequency: Body Acceleration: std(): Y","Frequency: Body Acceleration: std(): Z","Frequency: Body Acceleration Jerk: mean(): X","Frequency: Body Acceleration Jerk: mean(): Y","Frequency: Body Acceleration Jerk: mean(): Z","Frequency: Body Acceleration Jerk: std(): X","Frequency: Body Acceleration Jerk: std(): Y","Frequency: Body Acceleration Jerk: std(): Z","Frequency: Body Gyroscopic: mean(): X","Frequency: Body Gyroscopic: mean(): Y","Frequency: Body Gyroscopic: mean(): Z","Frequency: Body Gyroscopic: std(): X","Frequency: Body Gyroscopic: std(): Y","Frequency: Body Gyroscopic: std(): Z","Frequency: Body Acceleration Magnitude: mean()","Frequency: Body Acceleration Magnitude: std()","Frequency: Body Acceleration Jerk Magnitude: mean()","Frequency: Body Acceleration Jerk Magnitude: std()","Frequency: Body Gyroscopic Magnitude: mean()","Frequency: Body Gyroscopic Magnitude: std()","Frequency: Body Gyroscopic Jerk Magnitude: mean()","Frequency: Body Gyroscopic Jerk Magnitude: std()"
-SubjectID
-ActivityID
-tBodyAcc-mean()-X
-tBodyAcc-mean()-Y
-tBodyAcc-mean()-Z
-tBodyAcc-std()-X
-tBodyAcc-std()-Y
-tBodyAcc-std()-Z
-tGravityAcc-mean()-X
-tGravityAcc-mean()-Y
-tGravityAcc-mean()-Z
-tGravityAcc-std()-X
-tGravityAcc-std()-Y
-tGravityAcc-std()-Z
-tBodyAccJerk-mean()-X
-tBodyAccJerk-mean()-Y
-tBodyAccJerk-mean()-Z
-tBodyAccJerk-std()-X
-tBodyAccJerk-std()-Y
-tBodyAccJerk-std()-Z
-tBodyGyro-mean()-X
-tBodyGyro-mean()-Y
-tBodyGyro-mean()-Z
-tBodyGyro-std()-X
-tBodyGyro-std()-Y
-tBodyGyro-std()-Z
-tBodyGyroJerk-mean()-X
-tBodyGyroJerk-mean()-Y
-tBodyGyroJerk-mean()-Z
-tBodyGyroJerk-std()-X
-tBodyGyroJerk-std()-Y
-tBodyGyroJerk-std()-Z
-tBodyAccMag-mean()
-tBodyAccMag-std()
-tGravityAccMag-mean()
-tGravityAccMag-std()
-tBodyAccJerkMag-mean()
-tBodyAccJerkMag-std()
-tBodyGyroMag-mean()
-tBodyGyroMag-std()
-tBodyGyroJerkMag-mean()
-tBodyGyroJerkMag-std()
-fBodyAcc-mean()-X
-fBodyAcc-mean()-Y
-fBodyAcc-mean()-Z
-fBodyAcc-std()-X
-fBodyAcc-std()-Y
-fBodyAcc-std()-Z
-fBodyAcc-meanFreq()-X
-fBodyAcc-meanFreq()-Y
-fBodyAcc-meanFreq()-Z
-fBodyAccJerk-mean()-X
-fBodyAccJerk-mean()-Y
-fBodyAccJerk-mean()-Z
-fBodyAccJerk-std()-X
-fBodyAccJerk-std()-Y
-fBodyAccJerk-std()-Z
-fBodyAccJerk-meanFreq()-X
-fBodyAccJerk-meanFreq()-Y
-fBodyAccJerk-meanFreq()-Z
-fBodyGyro-mean()-X
-fBodyGyro-mean()-Y
-fBodyGyro-mean()-Z
-fBodyGyro-std()-X
-fBodyGyro-std()-Y
-fBodyGyro-std()-Z
-fBodyGyro-meanFreq()-X
-fBodyGyro-meanFreq()-Y
-fBodyGyro-meanFreq()-Z
-fBodyAccMag-mean()
-fBodyAccMag-std()
-fBodyBodyAccJerkMag-mean()
-fBodyBodyAccJerkMag-std()
-fBodyBodyGyroMag-mean()
-fBodyBodyGyroMag-std()
-fBodyBodyGyroJerkMag-mean()
-fBodyBodyGyroJerkMag-std()
-angle(tBodyAccMean,gravity)
-angle(tBodyAccJerkMean),gravityMean)
-angle(tBodyGyroMean,gravityMean)
-angle(tBodyGyroJerkMean,gravityMean)
-angle(X,gravityMean)
-angle(Y,gravityMean)
-angle(Z,gravityMean)
+""
+"SubjectID"
+"ActivityID"
+"Time: Body Acceleration: mean(): X"
+"Time: Body Acceleration: mean(): Y"
+"Time: Body Acceleration: mean(): Z"
+"Time: Body Acceleration: std(): X"
+"Time: Body Acceleration: std(): Y"
+"Time: Body Acceleration: std(): Z"
+"Time: Gravity Acceleration: mean(): X"
+"Time: Gravity Acceleration: mean(): Y"
+"Time: Gravity Acceleration: mean(): Z"
+"Time: Gravity Acceleration: std(): X"
+"Time: Gravity Acceleration: std(): Y"
+"Time: Gravity Acceleration: std(): Z"
+"Time: Body Acceleration Jerk: mean(): X"
+"Time: Body Acceleration Jerk: mean(): Y"
+"Time: Body Acceleration Jerk: mean(): Z"
+"Time: Body Acceleration Jerk: std(): X"
+"Time: Body Acceleration Jerk: std(): Y"
+"Time: Body Acceleration Jerk: std(): Z"
+"Time: Body Gyroscopic: mean(): X"
+"Time: Body Gyroscopic: mean(): Y"
+"Time: Body Gyroscopic: mean(): Z"
+"Time: Body Gyroscopic: std(): X"
+"Time: Body Gyroscopic: std(): Y"
+"Time: Body Gyroscopic: std(): Z"
+"Time: Body Gyroscopic Jerk: mean(): X"
+"Time: Body Gyroscopic Jerk: mean(): Y"
+"Time: Body Gyroscopic Jerk: mean(): Z"
+"Time: Body Gyroscopic Jerk: std(): X"
+"Time: Body Gyroscopic Jerk: std(): Y"
+"Time: Body Gyroscopic Jerk: std(): Z"
+"Time: Body Acceleration Magnitude: mean()"
+"Time: Body Acceleration Magnitude: std()"
+"Time: Gravity Acceleration Magnitude: mean()"
+"Time: Gravity Acceleration Magnitude: std()"
+"Time: Body Acceleration Jerk Magnitude: mean()"
+"Time: Body Acceleration Jerk Magnitude: std()"
+"Time: Body Gyroscopic Magnitude: mean()"
+"Time: Body Gyroscopic Magnitude: std()"
+"Time: Body Gyroscopic Jerk Magnitude: mean()"
+"Time: Body Gyroscopic Jerk Magnitude: std()"
+"Frequency: Body Acceleration: mean(): X"
+"Frequency: Body Acceleration: mean(): Y"
+"Frequency: Body Acceleration: mean(): Z"
+"Frequency: Body Acceleration: std(): X"
+"Frequency: Body Acceleration: std(): Y"
+"Frequency: Body Acceleration: std(): Z"
+"Frequency: Body Acceleration Jerk: mean(): X"
+"Frequency: Body Acceleration Jerk: mean(): Y"
+"Frequency: Body Acceleration Jerk: mean(): Z"
+"Frequency: Body Acceleration Jerk: std(): X"
+"Frequency: Body Acceleration Jerk: std(): Y"
+"Frequency: Body Acceleration Jerk: std(): Z"
+"Frequency: Body Gyroscopic: mean(): X"
+"Frequency: Body Gyroscopic: mean(): Y"
+"Frequency: Body Gyroscopic: mean(): Z"
+"Frequency: Body Gyroscopic: std(): X"
+"Frequency: Body Gyroscopic: std(): Y"
+"Frequency: Body Gyroscopic: std(): Z"
+"Frequency: Body Acceleration Magnitude: mean()"
+"Frequency: Body Acceleration Magnitude: std()"
+"Frequency: Body Acceleration Jerk Magnitude: mean()"
+"Frequency: Body Acceleration Jerk Magnitude: std()"
+"Frequency: Body Gyroscopic Magnitude: mean()"
+"Frequency: Body Gyroscopic Magnitude: std()"
+"Frequency: Body Gyroscopic Jerk Magnitude: mean()"
+"Frequency: Body Gyroscopic Jerk Magnitude: std()"
