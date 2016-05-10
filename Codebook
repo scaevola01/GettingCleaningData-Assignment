@@ -1,5 +1,6 @@
-describes the variables, the data, and any transformations or work that you performed to clean up the data
+#Codebook
 
+##Description
 There are four types of observations in my data set. The first column is the index of the data set, from 1 to 180, when it was exported from R.
 The second colum, "SubjectID", describes the person about whom the original data was recorded. This number is the same as in the original data set.
 The third column, "ActivityID," describes the activity that the subject was performing when those measurements were taken. The text values in this column were derived from the original data set, and were applied by matching the number in the original data set to the text value describing it.
@@ -19,7 +20,7 @@ The remaining 66 columns each descrbe the average of all of the values for one t
 * Y: The measurement was taken along the phone's Y axis
 * Z: The measurement was taken along the phone's Z axis
 
-The actual column names are as below:
+##Column Names
 
 ""
 "SubjectID"
