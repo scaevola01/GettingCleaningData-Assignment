@@ -3,6 +3,7 @@ describes the variables, the data, and any transformations or work that you perf
 There are three types of observations in my data set. The first column, "SubjectID", describes the person about whom the original data was recorded. This number is the same as in the original data set.
 The second column, "ActivityID," describes the activity that the subject was performing when those measurements were taken. The text values in this column were derived from the original data set, and were applied by matching the number in the original data set to the text value describing it.
 The remaining 66 columns each descrbe the average of all of the values for one type of measurement, for that subject and activity. This number was derived by taking all of the original observations, then using melt to turn them from a wide data set into a narrow data set, and finally using dcast to return them to a wide data set, but this time as a summary. The names for those columns follow a standard code, derived from the original data set, that can be interpreted using the below key:
+
 * Time: 
 * Frequency: 
 * Body: 
