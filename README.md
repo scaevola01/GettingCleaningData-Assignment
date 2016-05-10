@@ -8,5 +8,9 @@ My script assumes that, in the environment in which you run the script, you also
 
 ##Script
 My script, run_analysis.R, has five parts. I chose not to make each one into an independent function. Instead, the script itself is essentially one large function, and each part is run in sequence. The sections are numbered in my code in the comment lines (marked with /#).
-###1. This 
+1. This section of the script reads both the training and test data sets into R (1.1), applies the appropriate column names (1.2), adds the appropriate subject ID and activity ID columns (1.3), and finally merges the two datasets together (1.4).
+2. This section of the script extracts only the columns that describe a mean or a standard deviation, as well as the subject ID and activity ID, for later analysis.
+3. This section of the script replaces the activity ID numbers with the equivalent activity name.
+4. This section of the script renames the columns with more descriptive variable names.
+5. This section of the script creates and exports a data set with the average of each variable by activity, and by subject, as requested.
 
