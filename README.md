@@ -15,4 +15,7 @@ My script, run_analysis.R, has five parts. I chose not to make each one into an 
 5. This section of the script creates and exports a data set with the average of each variable by activity, and by subject, as requested.
 
 ##Output
-The output file is a .csv. The specific column names and descriptions are explained in the file Codebook.md.
+The output file is a .csv. The specific column names and descriptions are explained in the file Codebook.md. To read the data back into R and examine it, using the following commands:
+
+> data <- read.csv("tidy.csv", header=TRUE)
+> data
