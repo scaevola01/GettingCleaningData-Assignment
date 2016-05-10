@@ -72,5 +72,5 @@ tidy <- dcast(tidy, SubjectID + ActivityID ~ variable, mean)
 write.table(tidy, "tidy.txt", row.names = FALSE)
 
 # To read the data back into R and examine it, using the following commands:
-# data <- read.csv("tidy.csv", header=TRUE)
+# data <- read.table("tidy.txt", header=TRUE)
 # data
