@@ -1,5 +1,5 @@
 # GettingCleaningData-Assignment, v1.0
-John A. Lynch
+John A. Lynch /n
 UCLA Center for Digital Humanities
 ##Introduction
 For the Getting and Cleaning Data class (GCD), we were challenged to perform a series of cleaning operations on the UC Irvine "Human Activity Recognition Using Smartphones" data set, or HAR (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). This file outlines the assignment steps and the scripts that I wrote to accomplish them. This repository also contains another file, Codebook.md, which describes the variables in the dataset. Finally, there is a script, run_analysis.R, which will take the original data set and output a tidy data set, according to the principles laid out by the instructor of GCD.
